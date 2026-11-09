@@ -15,9 +15,13 @@
       --muted: #9aa3a8;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { min-height: 100%; }
+    html {
+      min-height: 100%;
+    }
 
     body {
       margin: 0;
@@ -27,7 +31,11 @@
       background-image:
         linear-gradient(rgba(0,245,160,.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0,245,160,.035) 1px, transparent 1px),
-        radial-gradient(ellipse at 50% 20%, rgba(0,245,160,.15), transparent 45%);
+        radial-gradient(
+          ellipse at 50% 20%,
+          rgba(0,245,160,.15),
+          transparent 45%
+        );
       background-size: 58px 58px, 58px 58px, auto;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       position: relative;
@@ -43,14 +51,26 @@
       z-index: 0;
       pointer-events: none;
       background:
-        radial-gradient(ellipse at 20% 30%, rgba(0,255,110,.28), transparent 35%),
-        radial-gradient(ellipse at 80% 65%, rgba(0,220,90,.24), transparent 40%),
-        radial-gradient(ellipse at 50% 90%, rgba(0,255,140,.20), transparent 35%);
+        radial-gradient(
+          ellipse at 20% 30%,
+          rgba(0,255,110,.28),
+          transparent 35%
+        ),
+        radial-gradient(
+          ellipse at 80% 65%,
+          rgba(0,220,90,.24),
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 50% 90%,
+          rgba(0,255,140,.20),
+          transparent 35%
+        );
       filter: blur(50px);
       animation: greenSmoke 12s ease-in-out infinite alternate;
     }
 
-    /* SVÆVENDE PARTIKLER */
+    /* SVÆVENDE GRØNNE PARTIKLER */
 
     body::after {
       content: "";
@@ -62,7 +82,10 @@
         radial-gradient(circle, #00ff88 1.5px, transparent 3px),
         radial-gradient(circle, #00ff88 1px, transparent 3px),
         radial-gradient(circle, #80ffbb 1px, transparent 3px);
-      background-size: 120px 160px, 190px 220px, 270px 310px;
+      background-size:
+        120px 160px,
+        190px 220px,
+        270px 310px;
       opacity: .65;
       animation: floatingParticles 16s linear infinite;
     }
@@ -72,10 +95,12 @@
         transform: translate(-5%, -3%) scale(1);
         opacity: .55;
       }
+
       50% {
         transform: translate(5%, 4%) scale(1.12);
         opacity: .9;
       }
+
       100% {
         transform: translate(-2%, 6%) scale(1.05);
         opacity: .65;
@@ -84,12 +109,21 @@
 
     @keyframes floatingParticles {
       from {
-        background-position: 10px 20px, 80px 100px, 130px 50px;
+        background-position:
+          10px 20px,
+          80px 100px,
+          130px 50px;
       }
+
       to {
-        background-position: 10px -300px, 80px -400px, 130px -500px;
+        background-position:
+          10px -300px,
+          80px -400px,
+          130px -500px;
       }
     }
+
+    /* HOVEDINDHOLD */
 
     main {
       position: relative;
@@ -99,6 +133,8 @@
       padding: 48px 0 64px;
       text-align: center;
     }
+
+    /* NYT DSC LOGO */
 
     .logo-wrap {
       width: 184px;
@@ -124,14 +160,18 @@
 
     @keyframes logoGlow {
       from {
-        box-shadow: 0 0 15px rgba(0,245,160,.4);
+        box-shadow:
+          0 0 15px rgba(0,245,160,.4);
       }
+
       to {
         box-shadow:
           0 0 30px rgba(0,245,160,.8),
           0 0 65px rgba(0,245,160,.3);
       }
     }
+
+    /* OVERSKRIFT */
 
     h1 {
       margin: 0;
@@ -151,6 +191,8 @@
       color: inherit;
       text-decoration: none;
     }
+
+    /* KNAPPER */
 
     .button {
       display: flex;
@@ -181,23 +223,30 @@
       outline: none;
     }
 
+    /* GRØN PHOTOS & VIDEOS KNAP */
+
     .button.primary {
       min-height: 100px;
       margin-bottom: 12px;
       color: #00150d;
-      background: linear-gradient(110deg, #00f5a0, #00c986);
+      background:
+        linear-gradient(110deg, #00f5a0, #00c986);
       border: 0;
       border-radius: 19px;
       text-transform: uppercase;
       font-weight: 850;
-      box-shadow: 0 10px 34px rgba(0,245,160,.3);
-      animation: buttonGlow 2.5s ease-in-out infinite alternate;
+      box-shadow:
+        0 10px 34px rgba(0,245,160,.3);
+      animation:
+        buttonGlow 2.5s ease-in-out infinite alternate;
     }
 
     @keyframes buttonGlow {
       from {
-        box-shadow: 0 0 15px rgba(0,245,160,.25);
+        box-shadow:
+          0 0 15px rgba(0,245,160,.25);
       }
+
       to {
         box-shadow:
           0 0 30px rgba(0,245,160,.6),
@@ -233,17 +282,25 @@
       letter-spacing: .12em;
     }
 
+    /* MOBIL */
+
     @media (max-width: 420px) {
-      main { padding-top: 34px; }
+      main {
+        padding-top: 34px;
+      }
+
       .logo-wrap {
         width: 160px;
         height: 160px;
       }
+
       .button {
         min-height: 70px;
         border-radius: 16px;
       }
     }
+
+    /* TILGÆNGELIGHED */
 
     @media (prefers-reduced-motion: reduce) {
       body::before,
@@ -252,6 +309,7 @@
       .button.primary {
         animation: none;
       }
+
       .button {
         transition: none;
       }
@@ -260,62 +318,94 @@
 </head>
 
 <body>
+
   <main>
 
+    <!-- NYT LOGO -->
+
     <div class="logo-wrap">
-      <img src="IMG_0140.JPG" alt="DrysiftCentral-logo">
+      <img
+        src="9FB484AD-8D04-480F-8B57-F04461AC5602.png"
+        alt="DrysiftCentral-logo"
+      >
     </div>
 
-    <h1>DRYSIFTCENTRAL<br>OFFICIAL LINKS</h1>
+    <!-- OVERSKRIFT -->
+
+    <h1>
+      DRYSIFTCENTRAL<br>
+      OFFICIAL LINKS
+    </h1>
 
     <p class="subtitle">
       Your hub for DrysiftCentral’s official links.
     </p>
 
-    <a class="button primary"
-       href="https://streamable.com/c/u8cxcu?src_collection=copy_link"
-       target="_blank"
-       rel="noopener noreferrer">
+    <!-- PHOTOS & VIDEOS -->
+
+    <a
+      class="button primary"
+      href="https://streamable.com/c/u8cxcu?src_collection=copy_link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span class="icon">📸</span>
-      <span>PHOTOS &amp; VIDEOS</span>
+      <span>PHOTOS &amp; VIDEOS 🎬🔥</span>
     </a>
 
     <p class="gallery-text">
-      ✨ Explore the DrysiftCentral gallery ✨
+      ⚡ Explore the DrysiftCentral gallery ⚡
     </p>
+
+    <!-- SOCIAL LINKS -->
 
     <div class="section-label">
       CONNECT WITH US
     </div>
 
-    <a class="button"
-       href="https://t.me/Jackjack448"
-       target="_blank"
-       rel="noopener noreferrer">
+    <!-- TELEGRAM -->
+
+    <a
+      class="button"
+      href="https://t.me/Jackjack448"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span class="icon">📲</span>
       <span>Telegram</span>
     </a>
 
-    <a class="button"
-       href="https://signal.me/#eu/UWttlPgIyXcD4Tw6EypN6SvRUVb9SfjgnHQtoyG3gUOvUPZfQLlJgYA5RSk4BDNM"
-       target="_blank"
-       rel="noopener noreferrer">
+    <!-- SIGNAL -->
+
+    <a
+      class="button"
+      href="https://signal.me/#eu/UWttlPgIyXcD4Tw6EypN6SvRUVb9SfjgnHQtoyG3gUOvUPZfQLlJgYA5RSk4BDNM"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span class="icon">🌐</span>
       <span>Signal</span>
     </a>
 
-    <a class="button"
-       href="https://www.instagram.com/drysift.central1312/"
-       target="_blank"
-       rel="noopener noreferrer">
+    <!-- INSTAGRAM -->
+
+    <a
+      class="button"
+      href="https://www.instagram.com/drysift.central1312/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span class="icon">📸</span>
       <span>Instagram</span>
     </a>
+
+    <!-- FOOTER -->
 
     <footer>
       DRYSIFTCENTRAL · OFFICIAL LINKS
     </footer>
 
   </main>
+
 </body>
 </html>
